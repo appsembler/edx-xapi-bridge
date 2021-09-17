@@ -5,7 +5,7 @@ import json
 
 from tincan import Activity, ActivityDefinition, LanguageMap, Result, Verb
 
-import block
+from . import block
 from xapi_bridge import constants, exceptions, settings
 
 
@@ -52,7 +52,7 @@ class ProblemCheckStatement(ProblemStatement):
         event_data = self.get_event_data(event)
         # for now we are going to assume one submission
         # TODO: when is that not true? is it ever not true? What problem types?
-        submission = event_data['submission'][event_data['submission'].keys()[0]]
+        submission = event_data['submission'][list(event_data['submission'].keys())[0]]
         return Result(
             score={
                 'raw': event_data['grade'],

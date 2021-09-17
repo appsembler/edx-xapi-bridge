@@ -3,7 +3,7 @@
 
 from tincan import Activity, ActivityDefinition, LanguageMap, Verb
 
-import base
+from . import base
 from xapi_bridge import constants, settings
 
 

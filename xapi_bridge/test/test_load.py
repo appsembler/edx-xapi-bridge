@@ -22,7 +22,7 @@ def main(srcfile):
     with open(os.path.join("xapi_bridge", "test", "fixtures", "test_loadtest_event_log.log"), "a+") as log:
         with open(srcfile, "r") as src:
             for i in range(0, settings.TEST_LOAD_TRACKING_TOTAL_LOG_WRITES):
-                print "appending another copy of src events to test tracking log"
+                print("appending another copy of src events to test tracking log")
                 src.seek(0)
                 log.write(src.read()+"\n")
                 log.flush()

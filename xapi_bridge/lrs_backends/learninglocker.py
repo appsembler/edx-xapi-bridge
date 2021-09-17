@@ -28,10 +28,10 @@ class LRSBackend(base.LRSBackendBase):
             raise exceptions.XAPIBridgeLRSBackendResponseParseError(response_data)
 
     def response_has_errors(self, response_data):
-        return json.loads(response_data).has_key('errorId')
+        return 'errorId' in json.loads(response_data)
 
     def request_unauthorised(self, response_data):
         return json.loads(response_data).get('message', '') == 'Unauthorised'
 
     def response_has_storage_errors(self, response_data):
-        return json.loads(response_data).has_key('warnings')
+        return 'warnings' in json.loads(response_data)

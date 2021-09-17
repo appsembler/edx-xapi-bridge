@@ -1,7 +1,7 @@
 """xAPI Statements for navigation interactions."""
 
 
-import base, block, course
+from . import base, block, course
 from xapi_bridge import constants, settings
 
 from tincan import Activity, ActivityDefinition, ActivityList, Context, ContextActivities, Extensions, LanguageMap, Verb

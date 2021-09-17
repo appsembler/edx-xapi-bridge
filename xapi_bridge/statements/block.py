@@ -3,8 +3,8 @@
 
 from tincan import Activity, ActivityDefinition, ActivityList, Context, ContextActivities, LanguageMap
 
-import base
-import course
+from . import base
+from . import course
 from xapi_bridge import constants, settings
 
 

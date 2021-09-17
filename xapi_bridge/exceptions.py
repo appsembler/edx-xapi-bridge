@@ -32,7 +32,7 @@ class XAPIBridgeSentryMixin(object):
         if user:
             scope.user = {"username": user}  # TODO: get email if possible
         if kwargs:
-            for key, value in kwargs.iteritems():
+            for key, value in list(kwargs.items()):
                 scope.set_extra(key, value)
         return scope
 
