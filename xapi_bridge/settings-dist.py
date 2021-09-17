@@ -37,9 +37,6 @@ MEMCACHED_ADDRESS = "127.0.0.1:11211"
 # list of ignored event ids
 IGNORED_EVENT_TYPES = []
 
-# Debugging
-EXCEPTIONS_NO_CONTINUE = False  # set to True to always raise, fail application
-
 # Sentry.io integration
 SENTRY_DSN = False
 if SENTRY_DSN:
