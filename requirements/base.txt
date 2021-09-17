@@ -1,5 +1,6 @@
 certifi==2021.5.30
-edx_rest_api_client<5.0.0
+edx-rest-api_client==5.2.1
+edx-django-utils<3.15.0
 rs-pyinotify==0.9.9
 python-memcached==1.59
 requests==2.20.0
