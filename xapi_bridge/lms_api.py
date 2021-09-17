@@ -36,7 +36,6 @@ class UserApiClient(object):
             client_id=settings.OPENEDX_OAUTH2_CLIENT_ID,
             client_secret=settings.OPENEDX_OAUTH2_CLIENT_SECRET,
         )
-        self.cache = False
         if settings.LMS_API_USE_MEMCACHED:
             self.cache = memcache.Client([settings.MEMCACHED_ADDRESS], debug=0)
         self.client = EdxRestApiClient(
