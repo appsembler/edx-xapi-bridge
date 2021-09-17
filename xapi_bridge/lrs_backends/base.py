@@ -3,10 +3,8 @@
 
 
 from abc import ABCMeta, abstractmethod
-from six import add_metaclass
 
 
-@add_metaclass(ABCMeta)
 class LRSBackendBase(object, metaclass=ABCMeta):
     """
     Base class to handle LRS backend-specific processing and error handling
