@@ -3,7 +3,7 @@
 import logging
 
 from xapi_bridge import exceptions, settings
-from xapi_bridge.statements import base, course, navigation, problem, video
+from xapi_bridge.statements import course, navigation, problem, video
 
 
 logger = logging.getLogger(__name__)
@@ -27,8 +27,8 @@ TRACKING_EVENTS_TO_XAPI_STATEMENT_MAP = {
     # navigation
     'edx.ui.lms.sequence.tab_selected': navigation.NavigationSequenceTabStatement,
     'seq_goto': navigation.NavigationSequenceTabStatement,
-    'edx.ui.lms.outline.selected': navigation.NavigationSectionSelectionStatement, 
-    'edx.ui.lms.link_clicked': navigation.NavigationLinkStatement, 
+    'edx.ui.lms.outline.selected': navigation.NavigationSectionSelectionStatement,
+    'edx.ui.lms.link_clicked': navigation.NavigationLinkStatement,
 
     # 'edx.drag_and_drop_v2.item.dropped'
 

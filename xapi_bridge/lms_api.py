@@ -61,13 +61,13 @@ class UserApiClient(object):
                     return {'email': resp['email'], 'fullname': resp['name']}
                 else:
                     # TODO: look at other reasons for no resp.success
-                    message = 'Failed to retrieve user details for username {}. User not found in LMS'.format(username)                
+                    message = 'Failed to retrieve user details for username {}. User not found in LMS'.format(username)
                     raise exceptions.XAPIBridgeUserNotFoundError(message)
             except (SlumberBaseException, ConnectionError, Timeout, HttpClientError) as e:
-                message = 'Failed to retrieve user details for username {} due to: {}'.format(username, str(e))                
+                message = 'Failed to retrieve user details for username {} due to: {}'.format(username, str(e))
                 e = exceptions.XAPIBridgeConnectionError(message)
                 e.err_continue_exc()
-                raise exceptions.XAPIBridgeUserNotFoundError(message)                   
+                raise exceptions.XAPIBridgeUserNotFoundError(message)
 
         if username == '':
             raise exceptions.XAPIBridgeUserNotFoundError()

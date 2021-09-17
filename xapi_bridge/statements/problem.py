@@ -6,8 +6,7 @@ import json
 from tincan import Activity, ActivityDefinition, LanguageMap, Result, Verb
 
 from . import block
-from xapi_bridge import constants, exceptions, settings
-
+from xapi_bridge import constants, exceptions
 
 
 class ProblemStatement(block.BaseCoursewareBlockStatement):

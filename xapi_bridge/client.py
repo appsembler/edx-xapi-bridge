@@ -34,7 +34,7 @@ class XAPIBridgeLRSPublisher(object):
     @property
     def lrs_backend(self):
         try:
-            module = importlib.import_module('xapi_bridge.lrs_backends.'+settings.LRS_BACKEND_TYPE)
+            module = importlib.import_module('xapi_bridge.lrs_backends.' + settings.LRS_BACKEND_TYPE)
             class_ = getattr(module, 'LRSBackend')
             return class_()
         except (AttributeError, ImportError):
@@ -52,7 +52,7 @@ class XAPIBridgeLRSPublisher(object):
         """
         try:
             lrs_resp = lrs.save_statements(statements)
-        except (socket.gaierror, ) as e:  # can't connect at all, no response
+        except (socket.gaierror, ):  # can't connect at all, no response
             raise exceptions.XAPIBridgeLRSConnectionError(queue=statements)
 
         if lrs_resp.success:
@@ -69,7 +69,7 @@ class XAPIBridgeLRSPublisher(object):
                     raise exceptions.XAPIBridgeLRSConnectionError(lrs_resp)
                 elif self.lrs_backend.response_has_storage_errors(lrs_resp.data):
                     badstmt = self._get_response_erroring_statement(lrs_resp)
-                    raise exceptions.XAPIBridgeStatementStorageError(statement=statements[badstmt], message=resp_dict.get('message',''))
+                    raise exceptions.XAPIBridgeStatementStorageError(statement=statements[badstmt], message=resp_dict.get('message', ''))
 
 
 lrs_publisher = XAPIBridgeLRSPublisher()

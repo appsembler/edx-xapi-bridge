@@ -7,7 +7,6 @@ from . import base
 from xapi_bridge import constants, settings
 
 
-
 class CourseActivityDefinition(ActivityDefinition):
 
     def __init__(self, event, *args, **kwargs):
@@ -23,7 +22,6 @@ class CourseActivityDefinition(ActivityDefinition):
 
 class CourseStatement(base.LMSTrackingLogStatement):
     """ Statement base for course enrollment and unenrollment events."""
-
 
     def get_object(self, event):
         """

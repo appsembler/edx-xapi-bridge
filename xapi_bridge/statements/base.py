@@ -3,7 +3,6 @@
 
 # indebted to authors of https://github.com/edx/edx-enterprise/tree/master/integrated_channels/xapi
 
-from copy import deepcopy
 import json
 
 from tincan import Agent, Context, Statement, ActivityDefinition, LanguageMap

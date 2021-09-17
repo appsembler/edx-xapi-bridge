@@ -1,7 +1,7 @@
 """Statement base classes for courseware blocks."""
 
 
-from tincan import Activity, ActivityDefinition, ActivityList, Context, ContextActivities, LanguageMap
+from tincan import Activity, ActivityDefinition, ActivityList, ContextActivities, LanguageMap
 
 from . import base
 from . import course
