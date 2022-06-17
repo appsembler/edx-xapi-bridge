@@ -3,9 +3,8 @@
 
 from tincan import Activity, ActivityDefinition, LanguageMap, Verb
 
-import base
+from . import base
 from xapi_bridge import constants, settings
-
 
 
 class CourseActivityDefinition(ActivityDefinition):
@@ -23,7 +22,6 @@ class CourseActivityDefinition(ActivityDefinition):
 
 class CourseStatement(base.LMSTrackingLogStatement):
     """ Statement base for course enrollment and unenrollment events."""
-
 
     def get_object(self, event):
         """

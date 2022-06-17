@@ -36,7 +36,6 @@ class UserApiClient(object):
             client_id=settings.OPENEDX_OAUTH2_CLIENT_ID,
             client_secret=settings.OPENEDX_OAUTH2_CLIENT_SECRET,
         )
-        self.cache = False
         if settings.LMS_API_USE_MEMCACHED:
             self.cache = memcache.Client([settings.MEMCACHED_ADDRESS], debug=0)
         self.client = EdxRestApiClient(
@@ -62,13 +61,13 @@ class UserApiClient(object):
                     return {'email': resp['email'], 'fullname': resp['name']}
                 else:
                     # TODO: look at other reasons for no resp.success
-                    message = 'Failed to retrieve user details for username {}. User not found in LMS'.format(username)                
+                    message = 'Failed to retrieve user details for username {}. User not found in LMS'.format(username)
                     raise exceptions.XAPIBridgeUserNotFoundError(message)
             except (SlumberBaseException, ConnectionError, Timeout, HttpClientError) as e:
-                message = 'Failed to retrieve user details for username {} due to: {}'.format(username, str(e))                
+                message = 'Failed to retrieve user details for username {} due to: {}'.format(username, str(e))
                 e = exceptions.XAPIBridgeConnectionError(message)
                 e.err_continue_exc()
-                raise exceptions.XAPIBridgeUserNotFoundError(message)                   
+                raise exceptions.XAPIBridgeUserNotFoundError(message)
 
         if username == '':
             raise exceptions.XAPIBridgeUserNotFoundError()

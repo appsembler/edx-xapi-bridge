@@ -3,9 +3,9 @@
 Conformant with ADLNet Video xAPI Profile https://w3id.org/xapi/video/v1.0.2
 """
 
-from tincan import Activity, ActivityDefinition, Context, Extensions, LanguageMap, Result, Verb
+from tincan import Activity, ActivityDefinition, Extensions, LanguageMap, Result, Verb
 
-import block
+from . import block
 from xapi_bridge import constants, exceptions, settings
 
 

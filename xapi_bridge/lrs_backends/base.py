@@ -3,15 +3,12 @@
 
 
 from abc import ABCMeta, abstractmethod
-from six import add_metaclass
 
 
-@add_metaclass(ABCMeta)
-class LRSBackendBase(object):
+class LRSBackendBase(object, metaclass=ABCMeta):
     """
     Base class to handle LRS backend-specific processing and error handling
     """
-    __metaclass__ = ABCMeta
 
     @abstractmethod
     def request_unauthorised(self, response_data):

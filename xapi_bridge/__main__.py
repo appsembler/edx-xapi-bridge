@@ -8,7 +8,7 @@ import os
 import signal
 import sys
 import threading
-import time
+
 
 from pyinotify import WatchManager, Notifier, NotifierError, EventsCodes, ProcessEvent
 from tincan import statement_list
@@ -220,10 +220,10 @@ if __name__ == '__main__':
         )
     else:
         logging.basicConfig(
-        filename='/edx/var/log/xapi/xapi_bridge.log',
-        filemode='a+',
-        format='%(levelname)s:%(message)s',
-        level=logging.INFO
+            filename='/edx/var/log/xapi/xapi_bridge.log',
+            filemode='a+',
+            format='%(levelname)s:%(message)s',
+            level=logging.INFO
         )
 
     if settings.HTTP_PUBLISH_STATUS is True:
